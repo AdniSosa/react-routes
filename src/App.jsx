@@ -5,7 +5,7 @@ import Projects from './Pages/Projects'
 import Resume from './Pages/Resume';
 
 
-const allRoutes = () => {
+const App = () => {
     return (
         <Router>
             <Routes>
@@ -18,4 +18,4 @@ const allRoutes = () => {
     )
 }
 
-export default allRoutes;
+export default App;

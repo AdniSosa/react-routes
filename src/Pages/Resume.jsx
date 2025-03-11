@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {studies, experiences} from '../data/resume'
+import {studies, experiences} from '../data/resume';
+import Header from '../components/Header';
 
 const Resume = () => {
-    const [myStudies, setMyStudies] = useState([]);
+    /* const [myStudies, setMyStudies] = useState([]);
     const [myExperience, setMyExperience] = useState([]);
 
     useEffect(() => {
         setMyStudies(studies);
         setMyExperience(experiences);
-    }, []);
+    }, []); */
 
     return (
         <>
+            <Header />
             <h1>Currículum</h1>
 
             <h2>Formación</h2>
             <ul>
-                {myStudies.map(study => (
-                    <li>
+                {studies.map(study => (
+                    <li key={study.id}>
                         <h3>{study.title}</h3>
                         <p>{study.institution}</p>
                         <p>{study.date}</p>
@@ -28,8 +30,8 @@ const Resume = () => {
 
             <h2>Experiencia laboral</h2>
             <ul>
-                {myExperience.map(experience => (
-                    <li>
+                {experiences.map(experience => (
+                    <li key={experience.id}>
                         <h3>{experience.title}</h3>
                         <p>{experience.company}</p>
                         <p>{experience.date}</p>
@@ -37,7 +39,6 @@ const Resume = () => {
                 ))}
             </ul>
 
-            <Link to='/'>Volver a Home</Link>
         </>
     )
 }

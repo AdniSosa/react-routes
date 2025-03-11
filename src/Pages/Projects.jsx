@@ -1,28 +1,22 @@
-import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
 import projects from "../data/projects";
+import Header from '../components/Header'
 
 const Projects = () => {
-    const [myProyects, setMyProjects] = useState([]);
-
-    useEffect(() => {
-        setMyProjects(projects)
-    }, []);
-
+    
     return (
         <>
+            <Header />
             <h1>Proyectos</h1>
             <ul>
-                {myProyects.map(project => (
+                {projects.map(project => (
                     <li key={project.id}>
                         <h2>{project.name}</h2>
-                        <img src={project.image}/>
+                        <img src={project.image} alt={project.name} width='200'/>
                         <p>{project.description}</p>
-                        <a href={project.url}>Enlace del proyecto</a>
+                        <a href={project.url} target='_blank'>Enlace del proyecto</a>
                     </li>
                 ))}
             </ul>
-            <Link to='/'>Volver a Home</Link>
         </>
     )
 }

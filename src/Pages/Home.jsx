@@ -1,13 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Header from '../components/Header'
 
 const Home = () => {
     return (
         <>
+            <Header />
             <h1>¡Hola👋🏽, soy Juan Pérez!</h1>
             <h2>Programar es mi pasión 😍</h2>
-            <Link to='/projects'>Proyectos</Link>
-            <Link to='/resume'>Currículum</Link>
         </>
     )
 }
